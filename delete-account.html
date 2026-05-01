@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete Account & Data - Secure Tunnel</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <style>
+        :root {
+            --bg-primary: #090514;
+            --bg-glow: #1E103C;
+            --accent-start: #9333EA;
+            --accent-end: #B983FF;
+            --text-primary: #FFFFFF;
+            --text-secondary: #9CA3AF;
+            --glass-bg: rgba(255, 255, 255, 0.05);
+            --glass-border: rgba(255, 255, 255, 0.1);
+            --danger: #EF4444;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background: radial-gradient(circle at top center, var(--bg-glow), var(--bg-primary));
+            background-attachment: fixed;
+            color: var(--text-primary);
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 24px;
+        }
+
+        .container {
+            max-width: 600px;
+            width: 100%;
+        }
+
+        .nav-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            margin-bottom: 32px;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: var(--text-primary);
+        }
+
+        .glass-panel {
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: 32px;
+            padding: 48px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .header-icon {
+            width: 64px;
+            height: 64px;
+            background: rgba(239, 68, 68, 0.1);
+            border: 1px solid rgba(239, 68, 68, 0.3);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            color: var(--danger);
+            margin-bottom: 24px;
+        }
+
+        h1 {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            letter-spacing: -0.5px;
+        }
+
+        p {
+            color: var(--text-secondary);
+            font-size: 15px;
+            margin-bottom: 32px;
+        }
+
+        /* Form Styles */
+        .form-group {
+            margin-bottom: 24px;
+        }
+
+        label {
+            display: block;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--text-primary);
+        }
+
+        input,
+        select {
+            width: 100%;
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid var(--glass-border);
+            color: var(--text-primary);
+            padding: 16px;
+            border-radius: 16px;
+            font-size: 15px;
+            outline: none;
+            transition: border-color 0.3s ease;
+        }
+
+        input:focus,
+        select:focus {
+            border-color: var(--accent-start);
+        }
+
+        select option {
+            background: var(--bg-primary);
+            color: var(--text-primary);
+        }
+
+        .btn-danger {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            width: 100%;
+            background: linear-gradient(to bottom right, #EF4444, #B91C1C);
+            color: white;
+            padding: 18px;
+            border-radius: 16px;
+            font-weight: 600;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            box-shadow: 0 4px 15px rgba(239, 68, 68, 0.3);
+            margin-top: 16px;
+        }
+
+        .btn-danger:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(239, 68, 68, 0.5);
+        }
+
+        .info-box {
+            margin-top: 32px;
+            padding: 16px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 12px;
+            border: 1px solid var(--glass-border);
+            font-size: 13px;
+            color: var(--text-secondary);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <a href="index.html" class="nav-link">
+            <i class="ph ph-arrow-left"></i> Back to Home
+        </a>
+
+        <div class="glass-panel">
+            <div class="header-icon">
+                <i class="ph-fill ph-warning-circle"></i>
+            </div>
+            <h1>Data Management</h1>
+            <p>Submit a request to delete your account or specific data. Because Secure Tunnel uses a Zero-Knowledge
+                architecture, your message history is stored only on your local device.</p>
+
+            <!-- 
+              ACTION REQUIRED: 
+              Replace "mailto:support@yourdomain.com" with your actual support email address.
+              When the user clicks submit, it will open their email client with the form data.
+            -->
+            <form action="mailto:support@yourdomain.com" method="GET" enctype="text/plain">
+                <div class="form-group">
+                    <label for="email">Email Address or Temp ID</label>
+                    <input type="text" id="email" name="Email_or_ID" placeholder="Enter your email or Temp ID" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="request-type">What would you like to do?</label>
+                    <select id="request-type" name="Request_Type" required>
+                        <option value="Delete Entire Account">Delete Entire Account (Profile, ID, Connections)</option>
+                        <option value="Delete Specific Data">Delete Specific Data (e.g., Profile Picture, Username)
+                        </option>
+                    </select>
+                </div>
+
+                <input type="hidden" name="Subject" value="Secure Tunnel - Data Deletion Request">
+
+                <button type="submit" class="btn-danger">
+                    <i class="ph-fill ph-trash"></i> Submit Deletion Request
+                </button>
+            </form>
+
+            <div class="info-box">
+                <strong>What happens next?</strong><br>
+                Once we receive your request, your profile, routing data, and Temp IDs will be wiped from our server
+                within 7 business days. To delete your local message vaults, please uninstall the app.
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
